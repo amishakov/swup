@@ -38,7 +38,7 @@ jobs:
     name: Run playwright tests (${{ matrix.shard }})
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.40.0
+      image: mcr.microsoft.com/playwright:v1.44.1
     timeout-minutes: 20
     needs: install
     strategy:
@@ -160,7 +160,7 @@ jobs:
 
       - name: Create report comment
         id: report-summary
-        uses: daun/playwright-report-summary@v2.1.2
+        uses: daun/playwright-report-summary@v3.3.0
         with:
           report-file: results.json
           report-url: ${{ steps.report-id.outputs.url }}
